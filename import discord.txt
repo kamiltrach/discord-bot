@@ -1,0 +1,14 @@
+import discord
+from discord.ext import commands, tasks
+
+intents = discord.Intents.default()
+intents.presences = True
+intents.members = True
+
+bot = commands.Bot(command_prefix='!', intents=intents)
+
+@bot.event
+async def on_ready():
+    await bot.change_presence(activity=discord.Game(name="Ekipa Milonowic"))
+
+bot.run('OTY3NzY4MzM0MjU2OTkyMjU2.GhdxZe.H7hk83ZKWMIMOC4-pZYxgr0xwVYIHQAXdQFiyM')
